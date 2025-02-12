@@ -6,7 +6,7 @@ const Products = () => {
   return (
       <div>
       <Heading text="Tüm Ürünler" />
-      <div className="flex flex-wrap  gap-5 md:-10">
+      <div className="flex flex-wrap justify-center items-center gap-3 md:gap-10 px-3 md:gap-x-10">
         {
           products.map((product) => (
             <ProductCard key={product.id} product={product}/>
