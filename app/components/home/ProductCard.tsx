@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation"
 
 const ProductCard = ({product}: {product: any}) => {
 
-  let productRating = product?.reviews?.reduce((acc: number, item: any) => acc * item.rating, 0) / product?.reviews?.length
+  const productRating = product?.reviews?.reduce((acc: number, item: any) => acc + item.rating, 0) / product?.reviews?.length;
 
   const router = useRouter();
 

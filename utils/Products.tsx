@@ -6,9 +6,12 @@ export const products = [
     price: 2999,
     brand: "Apple",
     category: "Phone",
-    inStock: true,
+    inStock: false,
     image: "https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_SL1500_.jpg",
-    reviews: [],
+    reviews: [
+      { user: "Ali", rating: 5, comment: "Harika bir telefon, çok hızlı!" },
+      { user: "Zeynep", rating: 4, comment: "Kamera mükemmel ama pil ömrü biraz kısa." },
+    ],
   },
   {
     id: "64a4ebe300900d44bb50628a",
@@ -19,7 +22,10 @@ export const products = [
     category: "Accessories",
     inStock: true,
     image: "https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_SL1500_.jpg",
-    reviews: [],
+    reviews: [
+      { user: "Mehmet", rating: 5, comment: "Klavyenin hissiyatı çok iyi, sessiz ve ergonomik." },
+      { user: "Ayşe", rating: 4, comment: "Tuşlar biraz büyük ama alışınca rahat." },
+    ],
   },
   {
     id: "648437b38c44d52b9542e340",
@@ -30,7 +36,10 @@ export const products = [
     category: "Phone",
     inStock: true,
     image: "https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_SL1500_.jpg",
-    reviews: [],
+    reviews: [
+      { user: "Burak", rating: 5, comment: "Fiyatına göre harika bir telefon." },
+      { user: "Elif", rating: 3, comment: "Şarj biraz çabuk bitiyor ama performansı iyi." },
+    ],
   },
   {
     id: "64a4e9e77e7299078334019f",
@@ -41,7 +50,10 @@ export const products = [
     category: "Accessories",
     inStock: true,
     image: "https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_SL1500_.jpg",
-    reviews: [],
+    reviews: [
+      { user: "Cem", rating: 5, comment: "Ellerim büyük olduğu için çok rahat." },
+      { user: "Ebru", rating: 4, comment: "Pil ömrü harika ama biraz pahalı." },
+    ],
   },
   {
     id: "649d775128b6744f0f497040",
@@ -52,6 +64,9 @@ export const products = [
     category: "Watch",
     inStock: true,
     image: "https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_SL1500_.jpg",
-    reviews: [],
+    reviews: [
+      { user: "Deniz", rating: 5, comment: "Çağrı yanıtlamak çok kolay, çok memnunum." },
+      { user: "Seda", rating: 3, comment: "Batarya süresi daha uzun olabilirdi." },
+    ],
   },
 ];

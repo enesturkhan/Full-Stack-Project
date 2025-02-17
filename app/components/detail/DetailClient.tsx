@@ -3,6 +3,7 @@ import Image from "next/image"
 import PageContainer from "../containers/PageContainer"
 import Counter from "../general/Counter"
 import { useState } from "react"
+import { Rating } from "@mui/material"
 
 export type cardProductProps = {
   id: string
@@ -40,7 +41,7 @@ const DetailClient = ({product}: {product:any}) => {
   };
 
 
-
+  const productRating = product?.reviews?.reduce((acc: number, item: any) => acc + item.rating, 0) / product?.reviews?.length
   return (
       <div className="my-2 md:my-10">
           
@@ -51,13 +52,15 @@ const DetailClient = ({product}: {product:any}) => {
                <Image src={product.image} fill alt={product.name} className="object-contain rounded-lg" />
              </div>
              <div className="w-full md:w-1/2 space-y-3">
-               <div className="text-xl md:text-2xl font-semibold">{product?.name}</div>
+            <div className="text-xl md:text-2xl font-semibold">{product?.name}</div>
+            <Rating name="read-only" value={productRating} readOnly />
                <div className="text-slate-500">{product?.description}</div>
                <div className="text-sm md:text-base font-medium">STOK DURUMU</div>
                <div className={product.inStock ? "text-green-500 font-bold" : "text-red-500 font-bold"}>
                  {product.inStock ? "Stokta var." : "Stokta yok."}
                       </div>
-            <Counter cardProduct={cardProduct} inCreaseFunc={inCreaseFunc}  deCreaseFunc= {deCreaseFunc} />
+            <Counter cardProduct={cardProduct} inCreaseFunc={inCreaseFunc} deCreaseFunc={deCreaseFunc} />
+            <div  className="text-xl font-bold text-orange-500"> {product.price} ₺ </div>
              </div>
            </div>
            
