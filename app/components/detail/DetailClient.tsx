@@ -2,8 +2,44 @@
 import Image from "next/image"
 import PageContainer from "../containers/PageContainer"
 import Counter from "../general/Counter"
+import { useState } from "react"
 
+export type cardProductProps = {
+  id: string
+  name: string
+  description: string
+  price: number
+  quantity: number
+  image: string
+  inStock: boolean
+}
+ 
 const DetailClient = ({product}: {product:any}) => {
+
+  const [cardProduct, setCardProduct] = useState<cardProductProps>({
+    id: product.id,
+    name: product.name,
+    description: product.description,
+    price: product.price,
+    quantity:1,
+    image: product.image,
+    inStock: product.inStock,
+  })
+
+  const inCreaseFunc = () => {
+      setCardProduct(prev => ({
+        ...prev, 
+        quantity: prev.quantity < 10 ? prev.quantity + 1 : prev.quantity
+      }));
+    };
+  const deCreaseFunc = () => {
+    setCardProduct(prev => ({
+      ...prev, 
+      quantity: prev.quantity > 1 ? prev.quantity - 1 : prev.quantity
+    }));
+  };
+
+
 
   return (
       <div className="my-2 md:my-10">
@@ -21,7 +57,7 @@ const DetailClient = ({product}: {product:any}) => {
                <div className={product.inStock ? "text-green-500 font-bold" : "text-red-500 font-bold"}>
                  {product.inStock ? "Stokta var." : "Stokta yok."}
                       </div>
-                      <Counter productCard="0" />
+            <Counter cardProduct={cardProduct} inCreaseFunc={inCreaseFunc}  deCreaseFunc= {deCreaseFunc} />
              </div>
            </div>
            
