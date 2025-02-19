@@ -4,6 +4,7 @@ import PageContainer from "../containers/PageContainer"
 import Counter from "../general/Counter"
 import { useState } from "react"
 import { Rating } from "@mui/material"
+import Button from "../general/Button"
 
 export type cardProductProps = {
   id: string
@@ -60,7 +61,8 @@ const DetailClient = ({product}: {product:any}) => {
                  {product.inStock ? "Stokta var." : "Stokta yok."}
                       </div>
             <Counter cardProduct={cardProduct} inCreaseFunc={inCreaseFunc} deCreaseFunc={deCreaseFunc} />
-            <div  className="text-xl font-bold text-orange-500"> {product.price} ₺ </div>
+            <div className="text-xl font-bold text-orange-500"> {product.price} ₺ </div>
+            <Button text="Sepete Ekle" />
              </div>
            </div>
            
