@@ -9,8 +9,8 @@ export const products = [
     inStock: false,
     image: "https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_SL1500_.jpg",
     reviews: [
-      { user: "Ali", rating: 5, comment: "Harika bir telefon, çok hızlı!" },
-      { user: "Zeynep", rating: 4, comment: "Kamera mükemmel ama pil ömrü biraz kısa." },
+      { id:"1", user: "Ali", rating: 5, comment: "Harika bir telefon, çok hızlı!" },
+      { id:"2", user: "Zeynep", rating: 4, comment: "Kamera mükemmel ama pil ömrü biraz kısa." },
     ],
   },
   {
@@ -23,8 +23,8 @@ export const products = [
     inStock: true,
     image: "https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_SL1500_.jpg",
     reviews: [
-      { user: "Mehmet", rating: 5, comment: "Klavyenin hissiyatı çok iyi, sessiz ve ergonomik." },
-      { user: "Ayşe", rating: 4, comment: "Tuşlar biraz büyük ama alışınca rahat." },
+      { id:"1", user: "Mehmet", rating: 5, comment: "Klavyenin hissiyatı çok iyi, sessiz ve ergonomik." },
+      { id:"2", user: "Ayşe", rating: 4, comment: "Tuşlar biraz büyük ama alışınca rahat." },
     ],
   },
   {
@@ -37,8 +37,8 @@ export const products = [
     inStock: true,
     image: "https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_SL1500_.jpg",
     reviews: [
-      { user: "Burak", rating: 5, comment: "Fiyatına göre harika bir telefon." },
-      { user: "Elif", rating: 3, comment: "Şarj biraz çabuk bitiyor ama performansı iyi." },
+      { id:"1", user: "Burak", rating: 5, comment: "Fiyatına göre harika bir telefon." },
+      { id:"2", user: "Elif", rating: 3, comment: "Şarj biraz çabuk bitiyor ama performansı iyi." },
     ],
   },
   {
@@ -51,8 +51,8 @@ export const products = [
     inStock: true,
     image: "https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_SL1500_.jpg",
     reviews: [
-      { user: "Cem", rating: 5, comment: "Ellerim büyük olduğu için çok rahat." },
-      { user: "Ebru", rating: 4, comment: "Pil ömrü harika ama biraz pahalı." },
+      { id:"1", user: "Cem", rating: 5, comment: "Ellerim büyük olduğu için çok rahat." },
+      { id:"2", user: "Ebru", rating: 4, comment: "Pil ömrü harika ama biraz pahalı." },
     ],
   },
   {
@@ -65,8 +65,8 @@ export const products = [
     inStock: true,
     image: "https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_SL1500_.jpg",
     reviews: [
-      { user: "Deniz", rating: 5, comment: "Çağrı yanıtlamak çok kolay, çok memnunum." },
-      { user: "Seda", rating: 3, comment: "Batarya süresi daha uzun olabilirdi." },
+      { id:"1", user: "Deniz", rating: 5, comment: "Çağrı yanıtlamak çok kolay, çok memnunum." },
+      {  id:"2", user: "Seda", rating: 3, comment: "Batarya süresi daha uzun olabilirdi." },
     ],
   },
 ];

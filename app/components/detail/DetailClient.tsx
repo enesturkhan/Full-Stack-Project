@@ -5,6 +5,7 @@ import Counter from "../general/Counter"
 import { useState } from "react"
 import { Rating } from "@mui/material"
 import Button from "../general/Button"
+import Comment from "./Comment"
 
 export type cardProductProps = {
   id: string
@@ -62,11 +63,22 @@ const DetailClient = ({product}: {product:any}) => {
                       </div>
             <Counter cardProduct={cardProduct} inCreaseFunc={inCreaseFunc} deCreaseFunc={deCreaseFunc} />
             <div className="text-xl font-bold text-orange-500"> {product.price} ₺ </div>
-            <Button text="Sepete Ekle" />
+            <Button onClick={} text="Sepete Ekle" outline small  />
              </div>
-           </div>
-           
-          </PageContainer>
+        </div>
+        
+        <div className="my-3" >
+          {
+              product?.reviews?.map((prd:any) => {  
+
+                <Comment key={prd.id} prd={prd} />
+              })
+          }
+        </div>
+         
+        
+     </PageContainer>        
+          
 
       </div>
       
