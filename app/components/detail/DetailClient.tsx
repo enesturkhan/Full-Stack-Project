@@ -6,6 +6,7 @@ import { useState } from "react"
 import { Rating } from "@mui/material"
 import Button from "../general/Button"
 import Comment from "./Comment"
+import Heading from "../general/Heading"
 
 export type cardProductProps = {
   id: string
@@ -70,13 +71,17 @@ const DetailClient = ({product}: {product:any}) => {
             <Button onClick={onClick} text="Sepete Ekle" outline small  />
              </div>
         </div>
+
+        <div>
+        <Heading clas  text="Yorumlar" />
+        </div>
         
         <div className="my-3" >
           {
-              product?.reviews?.map((prd:any) => {  
+              product?.reviews?.map((prd:any) => (  
 
                 <Comment key={prd.id} prd={prd} />
-              })
+              ))
           }
         </div>
          
