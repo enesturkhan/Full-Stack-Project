@@ -1,7 +1,12 @@
 
 const Comment = ( {prd}: {pred:any} ) => {
+
+console.log("prd", { prd})
+
   return (
-    <div>Comment</div>
+    <div>
+    comment
+    </div>
   )
 }
 

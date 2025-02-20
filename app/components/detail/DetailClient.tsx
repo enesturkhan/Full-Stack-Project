@@ -28,6 +28,7 @@ const DetailClient = ({product}: {product:any}) => {
     image: product.image,
     inStock: product.inStock,
   })
+ 
 
   const inCreaseFunc = () => {
       setCardProduct(prev => ({
@@ -41,6 +42,9 @@ const DetailClient = ({product}: {product:any}) => {
       quantity: prev.quantity > 1 ? prev.quantity - 1 : prev.quantity
     }));
   };
+  const onClick = () => {
+    console.log("One Milion Dolars")
+  }
 
 
   const productRating = product?.reviews?.reduce((acc: number, item: any) => acc + item.rating, 0) / product?.reviews?.length
@@ -63,7 +67,7 @@ const DetailClient = ({product}: {product:any}) => {
                       </div>
             <Counter cardProduct={cardProduct} inCreaseFunc={inCreaseFunc} deCreaseFunc={deCreaseFunc} />
             <div className="text-xl font-bold text-orange-500"> {product.price} ₺ </div>
-            <Button onClick={} text="Sepete Ekle" outline small  />
+            <Button onClick={onClick} text="Sepete Ekle" outline small  />
              </div>
         </div>
         
