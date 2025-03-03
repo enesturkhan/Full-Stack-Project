@@ -73,7 +73,7 @@ const DetailClient = ({product}: {product:any}) => {
         </div>
 
         <div>
-        <Heading clas  text="Yorumlar" />
+        <Heading  text="Yorumlar" />
         </div>
         
         <div className="my-3" >
