@@ -18,10 +18,13 @@ export type cardProductProps = {
   image: string
   inStock: boolean
 }
+
  
 const DetailClient = ({ product }: { product: any }) => {
   
-  const { productsQty } = useCart();
+  const { productsQty, addToBasket, cardPrdts } = useCart();
+  
+  console.log("first", cardPrdts)
 
   const [cardProduct, setCardProduct] = useState<cardProductProps>({
     id: product.id,
@@ -71,7 +74,7 @@ const DetailClient = ({ product }: { product: any }) => {
                       </div>
             <Counter cardProduct={cardProduct} inCreaseFunc={inCreaseFunc} deCreaseFunc={deCreaseFunc} />
             <div className="text-xl font-bold text-orange-500"> {product.price} ₺ </div>
-            <Button onClick={onClick} text="Sepete Ekle" outline small  />
+            <Button onClick={() => addToBasket(cardProduct)} text="Sepete Ekle" outline small  />
              </div>
         </div>
 

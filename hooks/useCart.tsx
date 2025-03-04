@@ -5,25 +5,36 @@ import { createContext, useCallback, useContext, useState } from "react";
 
 interface CartContextProps {
   productsQty: number
+  cardPrdts:cardProductProps[]
   addToBasket: (product: cardProductProps ) => void
   removeFromBasket: () => void
 }
 
 const CartContext = createContext<CartContextProps | null>(null)
 
-interface Porops{
+interface Porops {
   [propName:string]:string
 }
 export const CartContextProvider = (props: Props) => {
 
   const [productsQty, setProductsQty] = useState(0);
+  const [cardPrdts, setCardPrdts] = useState<cardProductProps[] | null>(null);
 
-  const addToBasket = useCallback(() => {
-  
- }, [] )
+  const addToBasket = useCallback((product:cardProductProps) => {
+    setCardPrdts(prev => {
+      let updateCart;
+      if (prev) {
+        updateCart = [...prev, product]
+      } else {
+        updateCart = [product]
+      }
+      return updateCart
+    })
+ }, [cardPrdts] )
   const value = {
     productsQty,
-    addToBasket
+    addToBasket,
+    cardPrdts
    
  }
  
