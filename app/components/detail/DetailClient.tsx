@@ -7,6 +7,7 @@ import { Rating } from "@mui/material"
 import Button from "../general/Button"
 import Comment from "./Comment"
 import Heading from "../general/Heading"
+import useCart from "@/hooks/useCart"
 
 export type cardProductProps = {
   id: string
@@ -18,7 +19,9 @@ export type cardProductProps = {
   inStock: boolean
 }
  
-const DetailClient = ({product}: {product:any}) => {
+const DetailClient = ({ product }: { product: any }) => {
+  
+  const { productsQty } = useCart();
 
   const [cardProduct, setCardProduct] = useState<cardProductProps>({
     id: product.id,
@@ -47,7 +50,7 @@ const DetailClient = ({product}: {product:any}) => {
     console.log("One Milion Dolars")
   }
 
-
+  console.log("productsQty:",productsQty ,"One Milion Dolars")
   const productRating = product?.reviews?.reduce((acc: number, item: any) => acc + item.rating, 0) / product?.reviews?.length
   return (
       <div className="my-2 md:my-10">
