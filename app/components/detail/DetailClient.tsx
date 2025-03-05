@@ -38,7 +38,6 @@ const DetailClient = ({ product }: { product: any }) => {
     inStock: product.inStock,
   })
  
-
   const inCreaseFunc = () => {
       setCardProduct(prev => ({
         ...prev, 
