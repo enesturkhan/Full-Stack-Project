@@ -9,6 +9,7 @@ import Comment from "./Comment"
 import Heading from "../general/Heading"
 import useCart from "@/hooks/useCart"
 
+
 export type cardProductProps = {
   id: string
   name: string
@@ -49,11 +50,10 @@ const DetailClient = ({ product }: { product: any }) => {
       quantity: prev.quantity > 1 ? prev.quantity - 1 : prev.quantity
     }));
   };
-  const onClick = () => {
-    console.log("One Milion Dolars")
-  }
+  
 
-  console.log("productsQty:",productsQty ,"One Milion Dolars")
+  console.log("productsQty:", productsQty, "One Milion Dolars")
+  
   const productRating = product?.reviews?.reduce((acc: number, item: any) => acc + item.rating, 0) / product?.reviews?.length
   return (
       <div className="my-2 md:my-10">

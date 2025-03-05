@@ -5,9 +5,9 @@ import { createContext, useCallback, useContext, useState } from "react";
 
 interface CartContextProps {
   productsQty: number
-  cardPrdts:cardProductProps[]
+  cardPrdts:cardProductProps[] | null
   addToBasket: (product: cardProductProps ) => void
-  removeFromBasket: () => void
+  //removeFromBasket: () => void
 }
 
 const CartContext = createContext<CartContextProps | null>(null)
