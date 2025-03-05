@@ -1,7 +1,7 @@
 "use client"
 
 import { cardProductProps } from "@/app/components/detail/DetailClient";
-import { createContext, useCallback, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
 interface CartContextProps {
   productsQty: number
@@ -12,15 +12,25 @@ interface CartContextProps {
 
 const CartContext = createContext<CartContextProps | null>(null)
 
-interface Porops {
-  [propName:string]:string
+interface Props {
+  [propName:string]:any
 }
+
 export const CartContextProvider = (props: Props) => {
 
   const [productsQty, setProductsQty] = useState(0);
   const [cardPrdts, setCardPrdts] = useState<cardProductProps[] | null>(null);
 
+  useEffect(() => {
+    const getItem: any = localStorage.getItem("cart")
+    const getItemParse: cardProductProps[] | null = JSON.parse(getItem)
+    setCardPrdts(getItemParse)
+  }, [] )    
+
+
+  
   const addToBasket = useCallback((product:cardProductProps) => {
+    setProductsQty(prev => prev + product.quantity);
     setCardPrdts(prev => {
       let updateCart;
       if (prev) {
@@ -28,15 +38,16 @@ export const CartContextProvider = (props: Props) => {
       } else {
         updateCart = [product]
       }
+      localStorage.setItem("cart", JSON.stringify(updateCart))
       return updateCart
     })
- }, [cardPrdts] )
+  }, [])
+  
   const value = {
     productsQty,
     addToBasket,
     cardPrdts
-   
- }
+  }
  
   return (
    <CartContext.Provider value={value} {...props} />

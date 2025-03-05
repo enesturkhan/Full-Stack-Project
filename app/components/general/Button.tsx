@@ -1,4 +1,3 @@
-
 import { IconType } from "react-icons"
 
 
@@ -8,13 +7,13 @@ interface buttonProps {
     small?: boolean
     outline?: boolean
     disabled?: boolean
-    icon: IconType
+  //  icon: IconType
 }
 
-const Button:React.FC<buttonProps> = ( {text, onClick, small, outline, disabled, icon:Icon} ) => {
+const Button:React.FC<buttonProps> = ( {text, onClick, small, outline, disabled} ) => {
   return (
-      <button disabled={disabled} className={`rounded-lg p-3 ${small ? "w-[ 250px ]" : "w-full "}    ${outline ? " border text-black bg-orange-500 " : " text-orange-500 bg-black border-none "}`} onClick={() => (onClick)} >
-          { Icon && <Icon/> }
+      <button disabled={disabled} className={`rounded-lg p-3 ${small ? "w-[ 250px ]" : "w-full "}    ${outline ? " border text-black bg-orange-500 " : " text-orange-500 bg-black border-none "}`} onClick={onClick} >
+           {/* { Icon && <Icon/> }  */}
           {text}
       </button>
   )
